@@ -139,6 +139,8 @@ module.exports = function (server, config) {
     function clientsInRoom(name) {
         return io.sockets.clients(name).length;
     }
+    
+    return io;
 
 };
 
