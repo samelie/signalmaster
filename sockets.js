@@ -4,7 +4,7 @@ var socketIO = require('socket.io'),
 
 module.exports = function (server, config) {
     var io = socketIO.listen(server);
-
+    //io.set('transports', ['websockets'])
     io.sockets.on('connection', function (client) {
         client.resources = {
             screen: false,
@@ -139,7 +139,7 @@ module.exports = function (server, config) {
     function clientsInRoom(name) {
         return io.sockets.clients(name).length;
     }
-    
+
     return io;
 
 };
